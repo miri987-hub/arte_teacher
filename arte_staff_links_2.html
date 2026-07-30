@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ARTE STAFF · 강사 전용 링크</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;700&family=IBM+Plex+Mono:wght@500&display=swap');
+
+  :root{
+    --navy:#1B2A4A;
+    --navy-soft:#2E4166;
+    --cream:#F6F1E7;
+    --page:#EFEAE0;
+    --gold:#C9A227;
+    --coral:#E2603F;
+    --ink:#22252B;
+    --ink-soft:#5B5E63;
+    --line:rgba(27,42,74,0.14);
+    --ok:#2F7A4F;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--page);
+    background-image:
+      radial-gradient(circle at 1px 1px, rgba(27,42,74,0.07) 1px, transparent 0);
+    background-size:22px 22px;
+    color:var(--ink);
+    font-family:'Pretendard','Malgun Gothic',-apple-system,BlinkMacSystemFont,sans-serif;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    padding:36px 16px 80px;
+  }
+  #app{width:100%;max-width:480px;}
+
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px;
+    letter-spacing:.18em;
+    color:var(--gold);
+    text-transform:uppercase;
+    text-align:center;
+    margin-bottom:6px;
+  }
+  h1{
+    font-family:'Noto Serif KR',serif;
+    font-weight:700;
+    font-size:26px;
+    text-align:center;
+    color:var(--navy);
+    margin:0 0 4px;
+  }
+  .sub{
+    text-align:center;
+    font-size:13px;
+    color:var(--ink-soft);
+    margin:0 0 28px;
+  }
+
+  .badge{
+    background:var(--cream);
+    border-radius:16px;
+    border:1px solid var(--line);
+    margin-bottom:14px;
+    box-shadow:0 3px 0 rgba(27,42,74,0.06);
+    overflow:hidden;
+    position:relative;
+  }
+  .badge::before{
+    content:"";
+    position:absolute;
+    top:-9px;left:50%;
+    transform:translateX(-50%);
+    width:34px;height:18px;
+    background:var(--page);
+    border:1px solid var(--line);
+    border-bottom:none;
+    border-radius:8px 8px 0 0;
+  }
+  .badge::after{
+    content:"";
+    position:absolute;
+    top:-2px;left:50%;
+    transform:translateX(-50%);
+    width:16px;height:16px;
+    background:var(--navy);
+    border-radius:50%;
+  }
+  .badge-head{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    padding:20px 18px 18px;
+    cursor:pointer;
+    -webkit-tap-highlight-color:transparent;
+  }
+  .badge-num{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px;
+    color:var(--gold);
+    letter-spacing:.06em;
+    writing-mode:vertical-rl;
+    padding-right:2px;
+  }
+  .avatar{
+    width:44px;height:44px;border-radius:50%;
+    background:var(--navy);
+    color:var(--cream);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Noto Serif KR',serif;
+    font-weight:700;
+    font-size:16px;
+    flex-shrink:0;
+  }
+  .badge-name{
+    font-family:'Noto Serif KR',serif;
+    font-weight:700;
+    font-size:17px;
+    color:var(--navy);
+  }
+  .badge-tag{
+    font-size:12px;
+    color:var(--ink-soft);
+    margin-top:2px;
+  }
+  .badge-chevron{
+    margin-left:auto;
+    color:var(--navy-soft);
+    font-size:18px;
+    transition:transform .2s ease;
+  }
+  .badge.open .badge-chevron{transform:rotate(90deg);}
+
+  .badge-body{
+    padding:0 18px 20px;
+    border-top:1px dashed var(--line);
+    margin-top:2px;
+    padding-top:16px;
+  }
+  .pin-row{display:flex;gap:8px;}
+  .pin-row input{
+    flex:1;
+    border:1px solid var(--line);
+    background:#fff;
+    border-radius:10px;
+    padding:11px 12px;
+    font-size:15px;
+    letter-spacing:.08em;
+    color:var(--ink);
+  }
+  .pin-row input:focus{outline:2px solid var(--gold);outline-offset:1px;}
+  .btn{
+    border:none;
+    border-radius:10px;
+    padding:11px 16px;
+    font-size:14px;
+    font-weight:700;
+    cursor:pointer;
+    font-family:inherit;
+  }
+  .btn-navy{background:var(--navy);color:var(--cream);}
+  .btn-navy:hover{background:var(--navy-soft);}
+  .btn-ghost{background:transparent;color:var(--navy);border:1px solid var(--line);}
+  .btn-coral{background:var(--coral);color:#fff;}
+  .btn-outline-danger{background:transparent;color:#a13a26;border:1px solid #e2a894;}
+  .err-msg{color:#a13a26;font-size:12px;margin-top:8px;}
+
+  .link-list{display:flex;flex-direction:column;gap:8px;}
+  .link-item{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:13px 14px;
+    text-decoration:none;
+    color:var(--ink);
+    font-size:14px;
+    font-weight:700;
+  }
+  .link-item:hover{border-color:var(--gold);}
+  .link-item .arrow{color:var(--gold);font-size:16px;}
+  .link-empty{
+    font-size:12px;color:var(--ink-soft);
+    padding:12px 14px;background:#fff;border:1px dashed var(--line);border-radius:10px;
+  }
+  .lock-again{
+    margin-top:10px;
+    font-size:12px;
+    color:var(--ink-soft);
+    background:none;border:none;
+    text-decoration:underline;
+    cursor:pointer;
+    padding:0;
+    font-family:inherit;
+  }
+
+  .footer-admin{
+    text-align:center;
+    margin-top:26px;
+  }
+  .footer-admin button{
+    background:none;border:none;
+    font-size:12px;
+    color:var(--ink-soft);
+    text-decoration:underline;
+    cursor:pointer;
+    font-family:inherit;
+  }
+
+  .overlay{
+    position:fixed;inset:0;
+    background:rgba(27,42,74,0.55);
+    display:flex;align-items:center;justify-content:center;
+    padding:20px;
+    z-index:50;
+  }
+  .modal{
+    background:var(--cream);
+    border-radius:16px;
+    padding:26px 22px;
+    width:100%;max-width:360px;
+    box-shadow:0 12px 30px rgba(0,0,0,0.25);
+  }
+  .modal h2{
+    font-family:'Noto Serif KR',serif;
+    color:var(--navy);
+    font-size:18px;margin:0 0 14px;
+  }
+  .modal-actions{display:flex;gap:8px;margin-top:16px;}
+  .modal-actions .btn{flex:1;}
+
+  .admin-wrap{background:var(--cream);border:1px solid var(--line);border-radius:16px;padding:20px;}
+  .admin-title{
+    font-family:'Noto Serif KR',serif;
+    color:var(--navy);font-size:19px;font-weight:700;margin:0 0 4px;
+  }
+  .admin-note{font-size:12px;color:var(--ink-soft);margin:0 0 18px;}
+  .teacher-card{
+    background:#fff;border:1px solid var(--line);border-radius:12px;
+    padding:16px;margin-bottom:14px;
+  }
+  .field-label{
+    font-size:11px;color:var(--ink-soft);
+    text-transform:uppercase;letter-spacing:.05em;
+    margin:0 0 4px;display:block;
+  }
+  .field{margin-bottom:10px;}
+  .field input{
+    width:100%;border:1px solid var(--line);border-radius:8px;
+    padding:9px 10px;font-size:14px;font-family:inherit;color:var(--ink);
+  }
+  .link-edit-row{display:flex;gap:6px;margin-bottom:6px;}
+  .link-edit-row input:first-child{flex:0 0 34%;}
+  .link-edit-row input:last-child{flex:1;}
+  .teacher-card-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;}
+  .teacher-card-top span{
+    font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--gold);
+  }
+  .del-btn{
+    background:none;border:none;color:#a13a26;font-size:12px;
+    text-decoration:underline;cursor:pointer;font-family:inherit;
+  }
+  .admin-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px;}
+  .status-line{font-size:12px;margin-top:10px;min-height:16px;}
+  .status-ok{color:var(--ok);}
+  .status-err{color:#a13a26;}
+  .loading{text-align:center;color:var(--ink-soft);font-size:13px;padding:60px 0;}
+</style>
+</head>
+<body>
+<div id="app"><div class="loading">불러오는 중…</div></div>
+
+<script>
+const STORAGE_KEY = "arte-staff-directory";
+const LINK_ICON_DEFAULTS = ["구글시트","면접 기출문제 모음집","학생 숙제 시스템","스케줄 관리 시스템"];
+
+function uid(){return Math.random().toString(36).slice(2,9);}
+
+function defaultData(){
+  const names = ["김미령","김민정","김나영","강사 04","강사 05","강사 06","강사 07","강사 08","강사 09","강사 10"];
+  return {
+    adminPassword: "admin1234",
+    teachers: names.map((name,i)=>({
+      id: uid(),
+      name,
+      password: "1234",
+      links: LINK_ICON_DEFAULTS.map(label=>({label, url:""}))
+    }))
+  };
+}
+
+let data = null;
+let view = "home";
+let expanded = {};
+let unlocked = {};
+let pinErrors = {};
+let adminModalOpen = false;
+let adminAuthError = "";
+let adminStatus = {msg:"", ok:true};
+
+let dataSource = "default";
+
+async function loadData(){
+  try{
+    const res = await fetch("./arte-data.json", {cache:"no-store"});
+    if(res.ok){
+      data = await res.json();
+      dataSource = "file";
+      render();
+      return;
+    }
+  }catch(e){}
+  try{
+    const res = await window.storage.get(STORAGE_KEY, true);
+    if(res && res.value){
+      data = JSON.parse(res.value);
+      dataSource = "storage";
+    } else {
+      data = defaultData();
+      dataSource = "default";
+      await window.storage.set(STORAGE_KEY, JSON.stringify(data), true);
+    }
+  }catch(e){
+    data = defaultData();
+    dataSource = "default";
+  }
+  render();
+}
+
+function downloadDataFile(){
+  const blob = new Blob([JSON.stringify(data, null, 2)], {type:"application/json"});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "arte-data.json";
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  URL.revokeObjectURL(url);
+}
+
+async function saveData(){
+  try{ await window.storage.set(STORAGE_KEY, JSON.stringify(data), true); }catch(e){}
+  downloadDataFile();
+  adminStatus = {msg:"arte-data.json 파일이 다운로드되었습니다. 이 파일을 깃허브 저장소의 arte-data.json과 교체(업로드)해야 실제로 반영됩니다.", ok:true};
+  render();
+}
+
+function importDataFile(file){
+  const reader = new FileReader();
+  reader.onload = (e)=>{
+    try{
+      const parsed = JSON.parse(e.target.result);
+      if(!parsed.teachers || !Array.isArray(parsed.teachers)) throw new Error("형식 오류");
+      data = parsed;
+      dataSource = "file";
+      adminStatus = {msg:"파일을 불러왔습니다. 수정 후 다시 다운로드해 주세요.", ok:true};
+    }catch(err){
+      adminStatus = {msg:"올바른 arte-data.json 파일이 아닙니다.", ok:false};
+    }
+    render();
+  };
+  reader.readAsText(file);
+}
+
+function initials(name){
+  const clean = name.replace(/강사|원장|선생님/g,"").trim();
+  return clean.slice(0,1) || "?";
+}
+
+function escapeHtml(s){
+  return (s||"").replace(/[&<>"']/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+}
+function escapeAttr(s){ return escapeHtml(s); }
+
+function renderHome(){
+  const items = data.teachers.map((t,i)=>{
+    const isOpen = !!expanded[t.id];
+    const isUnlocked = !!unlocked[t.id];
+    let bodyHtml = "";
+    if(isOpen && !isUnlocked){
+      const err = pinErrors[t.id] ? `<div class="err-msg">비밀번호가 올바르지 않습니다.</div>` : "";
+      bodyHtml = `
+        <div class="badge-body">
+          <div class="pin-row">
+            <input type="password" inputmode="numeric" placeholder="비밀번호 입력" data-pin-input="${t.id}">
+            <button class="btn btn-navy" data-action="unlock" data-id="${t.id}">확인</button>
+          </div>
+          ${err}
+        </div>`;
+    } else if(isOpen && isUnlocked){
+      const linksHtml = t.links.filter(l=>l.url && l.url.trim()).map(l=>`
+        <a class="link-item" href="${escapeAttr(l.url)}" target="_blank" rel="noopener">
+          <span>${escapeHtml(l.label)}</span><span class="arrow">↗</span>
+        </a>`).join("");
+      const empty = t.links.every(l=>!l.url || !l.url.trim())
+        ? `<div class="link-empty">아직 등록된 링크가 없습니다. 관리자에게 문의해 주세요.</div>` : "";
+      bodyHtml = `
+        <div class="badge-body">
+          <div class="link-list">${linksHtml}${empty}</div>
+          <button class="lock-again" data-action="lock" data-id="${t.id}">다시 잠그기</button>
+        </div>`;
+    }
+    return `
+      <div class="badge ${isOpen ? "open" : ""}">
+        <div class="badge-head" data-action="toggle" data-id="${t.id}">
+          <span class="badge-num">STAFF ${String(i+1).padStart(2,"0")}</span>
+          <div class="avatar">${escapeHtml(initials(t.name))}</div>
+          <div>
+            <div class="badge-name">${escapeHtml(t.name)}</div>
+            <div class="badge-tag">${isUnlocked ? "링크 열람 가능" : "비밀번호 필요"}</div>
+          </div>
+          <span class="badge-chevron">›</span>
+        </div>
+        ${bodyHtml}
+      </div>`;
+  }).join("");
+
+  return `
+    <div class="eyebrow">ARTE ACADEMY</div>
+    <h1>강사 전용 링크 카드</h1>
+    <p class="sub">이름표를 눌러 본인의 비밀번호를 입력하세요</p>
+    ${items}
+    <div class="footer-admin">
+      <button data-action="open-admin-login">학원 관리자이신가요?</button>
+    </div>
+  `;
+}
+
+function renderAdminLoginModal(){
+  if(!adminModalOpen) return "";
+  const err = adminAuthError ? `<div class="err-msg">${escapeHtml(adminAuthError)}</div>` : "";
+  return `
+    <div class="overlay" data-action="close-admin-overlay">
+      <div class="modal" data-action="noop">
+        <h2>관리자 로그인</h2>
+        <div class="field">
+          <input type="password" placeholder="관리자 비밀번호" id="admin-pw-input">
+        </div>
+        ${err}
+        <div class="modal-actions">
+          <button class="btn btn-ghost" data-action="close-admin-overlay">취소</button>
+          <button class="btn btn-navy" data-action="admin-login">입장</button>
+        </div>
+      </div>
+    </div>`;
+}
+
+function renderAdmin(){
+  const cards = data.teachers.map((t,i)=>{
+    const linkRows = t.links.map((l,li)=>`
+      <div class="link-edit-row">
+        <input value="${escapeAttr(l.label)}" data-field="link-label" data-id="${t.id}" data-li="${li}" placeholder="링크 이름">
+        <input value="${escapeAttr(l.url)}" data-field="link-url" data-id="${t.id}" data-li="${li}" placeholder="https://...">
+      </div>`).join("");
+    return `
+      <div class="teacher-card">
+        <div class="teacher-card-top">
+          <span>STAFF ${String(i+1).padStart(2,"0")}</span>
+          <button class="del-btn" data-action="delete-teacher" data-id="${t.id}">삭제</button>
+        </div>
+        <div class="field">
+          <span class="field-label">이름</span>
+          <input value="${escapeAttr(t.name)}" data-field="name" data-id="${t.id}">
+        </div>
+        <div class="field">
+          <span class="field-label">비밀번호</span>
+          <input value="${escapeAttr(t.password)}" data-field="password" data-id="${t.id}">
+        </div>
+        <span class="field-label">링크 4개 (이름 / 주소)</span>
+        ${linkRows}
+      </div>`;
+  }).join("");
+
+  const statusClass = adminStatus.ok ? "status-ok" : "status-err";
+
+  return `
+    <div class="eyebrow">ARTE ACADEMY</div>
+    <h1>관리자 설정</h1>
+    <p class="sub">강사 이름, 비밀번호, 링크 4개를 각각 관리하세요</p>
+    <div class="admin-wrap">
+      <p class="admin-note">현재 불러온 데이터: ${dataSource === "file" ? "arte-data.json 파일" : dataSource === "storage" ? "Claude 임시 저장소 (외부 호스팅 시에는 적용되지 않음)" : "기본값 (아직 저장된 파일 없음)"}. 민감한 비밀번호(계좌, 개인정보용 비밀번호 등)는 이 PIN으로 재사용하지 마세요.</p>
+      ${cards}
+      <div class="admin-actions">
+        <button class="btn btn-navy" data-action="add-teacher">+ 강사 추가</button>
+        <button class="btn btn-navy" data-action="save-all">arte-data.json 다운로드</button>
+        <button class="btn btn-ghost" data-action="trigger-import">파일 불러오기</button>
+        <input type="file" id="import-file-input" accept="application/json" style="display:none;">
+        <button class="btn btn-ghost" data-action="close-admin">닫기</button>
+        <button class="btn btn-outline-danger" data-action="reset-all">기본값으로 초기화</button>
+      </div>
+      <p class="admin-note" style="margin-top:8px;">다운로드한 arte-data.json 파일을 index.html과 같은 폴더(깃허브 저장소)에 업로드해서 기존 파일을 교체해야 방문자에게 반영됩니다.</p>
+      <div class="status-line ${statusClass}">${escapeHtml(adminStatus.msg)}</div>
+      <div class="field" style="margin-top:18px;">
+        <span class="field-label">관리자 비밀번호 변경</span>
+        <input id="admin-pw-change" placeholder="새 관리자 비밀번호" value="">
+      </div>
+      <button class="btn btn-ghost" data-action="change-admin-pw">관리자 비밀번호 저장</button>
+    </div>
+  `;
+}
+
+function render(){
+  const app = document.getElementById("app");
+  if(!data){ app.innerHTML = '<div class="loading">불러오는 중…</div>'; return; }
+  let html = view === "admin" ? renderAdmin() : renderHome();
+  html += renderAdminLoginModal();
+  app.innerHTML = html;
+}
+
+document.addEventListener("click", async (e)=>{
+  const el = e.target.closest("[data-action]");
+  if(!el) return;
+  const action = el.dataset.action;
+  const id = el.dataset.id;
+
+  if(action === "toggle"){
+    expanded[id] = !expanded[id];
+    pinErrors[id] = false;
+    render();
+  } else if(action === "unlock"){
+    const input = document.querySelector(`[data-pin-input="${id}"]`);
+    const val = input ? input.value : "";
+    const t = data.teachers.find(t=>t.id===id);
+    if(t && val === t.password){
+      unlocked[id] = true;
+      pinErrors[id] = false;
+    } else {
+      pinErrors[id] = true;
+    }
+    render();
+  } else if(action === "lock"){
+    unlocked[id] = false;
+    expanded[id] = false;
+    render();
+  } else if(action === "open-admin-login"){
+    adminModalOpen = true;
+    adminAuthError = "";
+    render();
+    const input = document.getElementById("admin-pw-input");
+    if(input) input.focus();
+  } else if(action === "close-admin-overlay"){
+    adminModalOpen = false;
+    render();
+  } else if(action === "admin-login"){
+    const input = document.getElementById("admin-pw-input");
+    const val = input ? input.value : "";
+    if(val === data.adminPassword){
+      adminModalOpen = false;
+      view = "admin";
+      adminStatus = {msg:"", ok:true};
+      render();
+    } else {
+      adminAuthError = "비밀번호가 올바르지 않습니다.";
+      render();
+    }
+  } else if(action === "close-admin"){
+    view = "home";
+    adminStatus = {msg:"", ok:true};
+    render();
+  } else if(action === "add-teacher"){
+    data.teachers.push({
+      id: uid(),
+      name: "새 강사",
+      password: "1234",
+      links: LINK_ICON_DEFAULTS.map(label=>({label, url:""}))
+    });
+    render();
+  } else if(action === "delete-teacher"){
+    if(confirm("이 강사를 삭제하시겠습니까?")){
+      data.teachers = data.teachers.filter(t=>t.id!==id);
+      render();
+    }
+  } else if(action === "save-all"){
+    await saveData();
+  } else if(action === "trigger-import"){
+    document.getElementById("import-file-input").click();
+  } else if(action === "reset-all"){
+    if(confirm("모든 데이터를 기본값으로 되돌립니다. 계속할까요?")){
+      data = defaultData();
+      await saveData();
+    }
+  } else if(action === "change-admin-pw"){
+    const input = document.getElementById("admin-pw-change");
+    const val = input ? input.value.trim() : "";
+    if(val.length < 4){
+      adminStatus = {msg:"비밀번호는 4자 이상으로 설정해 주세요.", ok:false};
+      render();
+      return;
+    }
+    data.adminPassword = val;
+    await saveData();
+  }
+});
+
+document.addEventListener("input", (e)=>{
+  const t = e.target;
+  if(t.dataset.field){
+    const teacher = data.teachers.find(x=>x.id===t.dataset.id);
+    if(!teacher) return;
+    if(t.dataset.field === "name") teacher.name = t.value;
+    else if(t.dataset.field === "password") teacher.password = t.value;
+    else if(t.dataset.field === "link-label") teacher.links[+t.dataset.li].label = t.value;
+    else if(t.dataset.field === "link-url") teacher.links[+t.dataset.li].url = t.value;
+  }
+});
+
+document.addEventListener("change",(e)=>{
+  if(e.target.id === "import-file-input" && e.target.files && e.target.files[0]){
+    importDataFile(e.target.files[0]);
+  }
+});
+
+document.addEventListener("keydown",(e)=>{
+  if(e.key === "Enter"){
+    if(e.target.id === "admin-pw-input"){
+      document.querySelector('[data-action="admin-login"]').click();
+    } else if(e.target.matches('[data-pin-input]')){
+      const id = e.target.getAttribute("data-pin-input");
+      document.querySelector(`[data-action="unlock"][data-id="${id}"]`).click();
+    }
+  }
+});
+
+loadData();
+</script>
+</body>
+</html>
