@@ -12,7 +12,7 @@
         },
         {
           "label": "스케줄 관리 시스템",
-          "url": "https://miri987-hub.github.io/able_management/?teacher=zek5ljx0"
+          "url": "https://miri987-hub.github.io/able_management/"
         }
       ],
       "branchId": "able"
@@ -28,7 +28,7 @@
         },
         {
           "label": "스케줄 관리 시스템",
-          "url": "https://miri987-hub.github.io/able_management/?teacher=2be21aae"
+          "url": "https://miri987-hub.github.io/able_management/"
         }
       ],
       "branchId": "able"
@@ -150,30 +150,6 @@
       "branchId": "daegu"
     },
     {
-      "id": "t09",
-      "name": "원장 서은희",
-      "password": "0618",
-      "links": [
-        {
-          "label": "구글시트",
-          "url": "https://docs.google.com/spreadsheets/d/1L-7TlrBpMg9tHNFV0BlOZiadoibZTcg_R0nSDyRvaCM/edit?usp=sharing"
-        },
-        {
-          "label": "면접 기출문제 모음집",
-          "url": "https://miri987-hub.github.io/arte_collection/"
-        },
-        {
-          "label": "학생 숙제 시스템",
-          "url": "https://miri987-hub.github.io/artespeech/arte_speech_19.html"
-        },
-        {
-          "label": "스케줄 관리 시스템",
-          "url": "https://miri987-hub.github.io/arte_management/?teacher=0itlq9ft"
-        }
-      ],
-      "branchId": "changwon"
-    },
-    {
       "id": "t08",
       "name": "강사 허연진",
       "password": "7989",
@@ -193,6 +169,30 @@
         {
           "label": "스케줄 관리 시스템",
           "url": "https://miri987-hub.github.io/arte_management/?teacher=zmdmwckv"
+        }
+      ],
+      "branchId": "changwon"
+    },
+    {
+      "id": "t09",
+      "name": "원장 서은희",
+      "password": "0618",
+      "links": [
+        {
+          "label": "구글시트",
+          "url": "https://docs.google.com/spreadsheets/d/1L-7TlrBpMg9tHNFV0BlOZiadoibZTcg_R0nSDyRvaCM/edit?usp=sharing"
+        },
+        {
+          "label": "면접 기출문제 모음집",
+          "url": "https://miri987-hub.github.io/arte_collection/"
+        },
+        {
+          "label": "학생 숙제 시스템",
+          "url": "https://miri987-hub.github.io/artespeech/arte_speech_19.html"
+        },
+        {
+          "label": "스케줄 관리 시스템",
+          "url": "https://miri987-hub.github.io/arte_management/?teacher=0itlq9ft"
         }
       ],
       "branchId": "changwon"
