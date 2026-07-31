@@ -1,0 +1,287 @@
+{
+  "adminPassword": "admin1234",
+  "teachers": [
+    {
+      "id": "t01",
+      "name": "이소정부원장",
+      "password": "8704",
+      "links": [
+        {
+          "label": "구글시트",
+          "url": "https://docs.google.com/spreadsheets/d/1UhL1SBqvPQFlMZwhSHRpnXQfXIS8jPjwoVJZQHMgGqI/edit?usp=sharing"
+        },
+        {
+          "label": "스케줄 관리 시스템",
+          "url": "https://miri987-hub.github.io/able_management/?teacher=zek5ljx0"
+        }
+      ],
+      "branchId": "able"
+    },
+    {
+      "id": "t02",
+      "name": "김세은 강사 ",
+      "password": "5525",
+      "links": [
+        {
+          "label": "구글시트",
+          "url": "https://docs.google.com/spreadsheets/d/1-uaYkrgoYjkdVKq4psfqy5iyW6-Dc2DHaYYs0vvkR2Q/edit?usp=sharing"
+        },
+        {
+          "label": "스케줄 관리 시스템",
+          "url": "https://miri987-hub.github.io/able_management/?teacher=2be21aae"
+        }
+      ],
+      "branchId": "able"
+    },
+    {
+      "id": "t03",
+      "name": "이지원 강사",
+      "password": "8793",
+      "links": [
+        {
+          "label": "구글시트",
+          "url": "https://docs.google.com/spreadsheets/d/1YnS1r84ZG61zsNt4FMry7-cTdAvSijfaXLD0Uy1Eabo/edit?usp=sharing"
+        },
+        {
+          "label": "ABLE 스케줄 관리 시스템",
+          "url": "https://miri987-hub.github.io/able_management/"
+        },
+        {
+          "label": "ARTE 스케줄 관리 시스템",
+          "url": "https://miri987-hub.github.io/arte_management/?teacher=ta619ic5"
+        },
+        {
+          "label": "ARTE 학생 숙제 시스템",
+          "url": "https://miri987-hub.github.io/artespeech/arte_speech_19.html"
+        }
+      ],
+      "branchId": "daegu"
+    },
+    {
+      "id": "t04",
+      "name": "원장 하한나",
+      "password": "2222",
+      "links": [
+        {
+          "label": "구글시트",
+          "url": "https://docs.google.com/spreadsheets/d/166RYqtm3v7x4NbErs_U7Imiaqi3O_Dfzw7GiLU7LNg8/edit?usp=sharing"
+        },
+        {
+          "label": "면접 기출문제 모음집",
+          "url": "https://miri987-hub.github.io/arte_collection/"
+        },
+        {
+          "label": "학생 숙제 시스템",
+          "url": "https://miri987-hub.github.io/artespeech/arte_speech_19.html"
+        },
+        {
+          "label": "스케줄 관리 시스템",
+          "url": "https://miri987-hub.github.io/arte_management/?teacher=en5zwuef"
+        }
+      ],
+      "branchId": "daegu"
+    },
+    {
+      "id": "t05",
+      "name": "부원장 김민정",
+      "password": "3102",
+      "links": [
+        {
+          "label": "구글시트",
+          "url": "https://docs.google.com/spreadsheets/d/1qYFS6J6u8s6cfBM0-GL_cFOw39PnWxe1FByklFu4cB4/edit?usp=sharing"
+        },
+        {
+          "label": "면접 기출문제 모음집",
+          "url": "https://miri987-hub.github.io/arte_collection/"
+        },
+        {
+          "label": "학생 숙제 시스템",
+          "url": "https://miri987-hub.github.io/artespeech/arte_speech_19.html"
+        },
+        {
+          "label": "스케줄 관리 시스템",
+          "url": "https://miri987-hub.github.io/arte_management/?teacher=q8sl2ohl"
+        }
+      ],
+      "branchId": "daegu"
+    },
+    {
+      "id": "t06",
+      "name": "강사 임다혜",
+      "password": "8241",
+      "links": [
+        {
+          "label": "구글시트",
+          "url": "https://docs.google.com/spreadsheets/d/1FAy10u-btcHycOM9qKcWC2bCgMqSbsSeL7_dU08ZazQ/edit?usp=sharing"
+        },
+        {
+          "label": "면접 기출문제 모음집",
+          "url": "https://miri987-hub.github.io/arte_collection/"
+        },
+        {
+          "label": "학생 숙제 시스템",
+          "url": "https://miri987-hub.github.io/artespeech/arte_speech_19.html"
+        },
+        {
+          "label": "스케줄 관리 시스템",
+          "url": "https://miri987-hub.github.io/arte_management/?teacher=4jsp64o4"
+        }
+      ],
+      "branchId": "daegu"
+    },
+    {
+      "id": "t07",
+      "name": "강사 이소정",
+      "password": "5588",
+      "links": [
+        {
+          "label": "구글시트",
+          "url": "https://docs.google.com/spreadsheets/d/1UYuGDcLFdRiig9uBvHp9cy7B44cijrJH4wvo51dD1Mw/edit?usp=sharing"
+        },
+        {
+          "label": "학생 숙제 시스템",
+          "url": "https://miri987-hub.github.io/artespeech/arte_speech_19.html"
+        },
+        {
+          "label": "스케줄 관리 시스템",
+          "url": "https://miri987-hub.github.io/arte_management/?teacher=8zbdpnud"
+        }
+      ],
+      "branchId": "daegu"
+    },
+    {
+      "id": "t09",
+      "name": "원장 서은희",
+      "password": "0618",
+      "links": [
+        {
+          "label": "구글시트",
+          "url": "https://docs.google.com/spreadsheets/d/1L-7TlrBpMg9tHNFV0BlOZiadoibZTcg_R0nSDyRvaCM/edit?usp=sharing"
+        },
+        {
+          "label": "면접 기출문제 모음집",
+          "url": "https://miri987-hub.github.io/arte_collection/"
+        },
+        {
+          "label": "학생 숙제 시스템",
+          "url": "https://miri987-hub.github.io/artespeech/arte_speech_19.html"
+        },
+        {
+          "label": "스케줄 관리 시스템",
+          "url": "https://miri987-hub.github.io/arte_management/?teacher=0itlq9ft"
+        }
+      ],
+      "branchId": "changwon"
+    },
+    {
+      "id": "t08",
+      "name": "강사 허연진",
+      "password": "7989",
+      "links": [
+        {
+          "label": "구글시트",
+          "url": "https://docs.google.com/spreadsheets/d/1n1Uv7-jtYQV1QXa5BZRqwTpapYlsz9Og3p6BIqsDHcI/edit?usp=sharing"
+        },
+        {
+          "label": "면접 기출문제 모음집",
+          "url": "https://miri987-hub.github.io/arte_collection/"
+        },
+        {
+          "label": "학생 숙제 시스템",
+          "url": "https://miri987-hub.github.io/artespeech/arte_speech_19.html"
+        },
+        {
+          "label": "스케줄 관리 시스템",
+          "url": "https://miri987-hub.github.io/arte_management/?teacher=zmdmwckv"
+        }
+      ],
+      "branchId": "changwon"
+    },
+    {
+      "id": "t10",
+      "name": "강사 박수민",
+      "password": "1104",
+      "links": [
+        {
+          "label": "구글시트",
+          "url": "https://docs.google.com/spreadsheets/d/1q-7wqmf1NIuc_dnNcZCgnf9P0gEy0UJRtskAPHIWIoY/edit?usp=sharing"
+        },
+        {
+          "label": "면접 기출문제 모음집",
+          "url": "https://miri987-hub.github.io/arte_collection/"
+        },
+        {
+          "label": "학생 숙제 시스템",
+          "url": "https://miri987-hub.github.io/artespeech/arte_speech_19.html"
+        },
+        {
+          "label": "스케줄 관리 시스템",
+          "url": "https://miri987-hub.github.io/arte_management/?teacher=6vnd6um4"
+        }
+      ],
+      "branchId": "changwon"
+    },
+    {
+      "id": "oi1xex0",
+      "branchId": "changwon",
+      "name": "강사 문정애",
+      "password": "0133",
+      "links": [
+        {
+          "label": "구글시트",
+          "url": "https://docs.google.com/spreadsheets/d/1IYX4-rVevBFmSbeuQMeJzOyt6kUu2Hv9XhqVKbucWAM/edit?usp=sharing"
+        },
+        {
+          "label": "면접 기출문제 모음집",
+          "url": "https://miri987-hub.github.io/arte_collection/"
+        },
+        {
+          "label": "학생 숙제 시스템",
+          "url": "https://miri987-hub.github.io/artespeech/arte_speech_19.html"
+        },
+        {
+          "label": "스케줄 관리 시스템",
+          "url": "https://miri987-hub.github.io/arte_management/?teacher=dekp5wbb"
+        }
+      ]
+    },
+    {
+      "id": "r6vs1go",
+      "branchId": "daegu",
+      "name": "강사 이가영",
+      "password": "0730",
+      "links": [
+        {
+          "label": "구글시트",
+          "url": "https://docs.google.com/spreadsheets/d/1Dpvwc5wxKOttcKUsJHtLy0yrQ_aKeIlOOdXw_T5DDPM/edit?usp=sharing"
+        },
+        {
+          "label": "면접 기출문제 모음집",
+          "url": "https://miri987-hub.github.io/arte_collection/"
+        },
+        {
+          "label": "학생 숙제 시스템",
+          "url": "https://miri987-hub.github.io/artespeech/arte_speech_19.html"
+        },
+        {
+          "label": "스케줄 관리 시스템",
+          "url": "https://miri987-hub.github.io/arte_management/?teacher=j98v0bbx"
+        }
+      ]
+    }
+  ],
+  "branches": [
+    {
+      "id": "able",
+      "name": "ABLE"
+    },
+    {
+      "id": "daegu",
+      "name": "ARTE 대구점"
+    },
+    {
+      "id": "changwon",
+      "name": "ARTE 창원점"
+    }
+  ]
+}
